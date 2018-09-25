@@ -1,6 +1,8 @@
 // requireing native (core) modules
 
-// Go read the node api docs
+// Go read the node api docs:
+// https://nodejs.org/api/util.html
+
 
 const util = require('util');
 // import doesn't need './' etc.
