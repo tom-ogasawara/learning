@@ -6,3 +6,9 @@
 //  - to change something
 //  - ex: adding a method or property to an object
 
+// 4.31 Event:
+//   - Something that has happened in our app that we can respond to
+  // - System events:
+  //   - C++ Core: libuv
+  // - Custom events:
+  //   - Javascript Core: Event emitter
