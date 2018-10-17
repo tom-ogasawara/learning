@@ -19,6 +19,7 @@ let brickPadding = 10;
 let brickOffsetTop = 30;
 let brickOffsetLeft = 30;
 let score = 0;
+let lives = 3;
 let rightPressed = false;
 let leftPressed = false;
 
@@ -111,12 +112,19 @@ function drawScore() {
   ctx.fillText('Score: ' + score, 8, 20);
 }
 
+function drawLives() {
+  ctx.font = '16px Arial';
+  ctx.fillStyle = '#0095DD';
+  ctx.fillText('Lives: ' + lives, canvas.width - 65, 20);
+}
+
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawBricks();
   drawBall();
   drawPaddle();
   drawScore();
+  drawLives();
   collisionDetection();
 
   if (y + dy < ballRadius) {
@@ -142,6 +150,18 @@ function draw() {
 
   x += dx;
   y += dy;
+}
+
+//
+document.addEventListener('mousemove', mouseMoveHandler);
+
+function mouseMoveHandler(e) {
+  let relativeX = e.clientX - canvas.offsetLeft;
+  if (
+    relativeX > paddleWidth / 2 && relativeX < canvas.width - paddleWidth / 2
+  ) {
+    paddleX = relativeX - paddleWidth / 2;
+  }
 }
 
 // initiate the animation
