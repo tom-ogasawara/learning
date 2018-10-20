@@ -12,3 +12,8 @@
   //   - C++ Core: libuv
   // - Custom events:
   //   - Javascript Core: Event emitter
+
+
+// 5.33 Event listener:
+//   - Code that responds to an event
+//   - In JSON, the listener is a function
