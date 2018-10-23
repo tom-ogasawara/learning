@@ -1,10 +1,18 @@
-class Emitter {
-  cosntructor() {
-    this.events = {};
-  }
+const Emitter = () => {
+  this.events = {};
+};
 
-  on(type, listener) {
-    this.events[type] = this.events[type] || [];
-    this.events[type].push
+Emitter.prototype.on = (type, listener) => {
+  this.events[type] = this.events[type] || [];
+  this.events[type].push(listener);
+};
+
+Emitter.prototype.emit = type => {
+  if (this.events[type]) {
+    this.events[type].forEach(listener => {
+      listener();
+    });
   }
-}
+};
+
+module.exports = Emitter;
