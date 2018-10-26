@@ -17,3 +17,8 @@
 // 5.33 Event listener:
 //   - Code that responds to an event
 //   - In JSON, the listener is a function
+
+// 5.34 Magic String:
+//   - A string that has some special string in our code 
+//   - This is bad because it makes it easy for a type to cause a bug
+//   - Also makes it hard to debug
